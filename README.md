@@ -83,7 +83,7 @@ The project integrates **Python, Scikit-learn, NumPy, Pandas and Streamlit** int
 
 
 
-##🔄 Application Workflow
+# 🔄 Application Workflow
 
  🚀 START
                             │
