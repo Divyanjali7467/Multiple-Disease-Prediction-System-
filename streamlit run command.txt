@@ -1,0 +1,1 @@
+streamlit run ""C:\Users\Divya\OneDrive\ドキュメント\Multiple Disease prediction\multiple disease pred.py"
