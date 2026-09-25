@@ -9,18 +9,16 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-model_path = r"C:\Users\Divya\OneDrive\ドキュメント\Multiple Disease prediction\Saved models"
-
 diabetes_model = pickle.load(
-    open(model_path + r"\diabetes_model.sav", 'rb')
+    open("diabetes_model.sav", "rb")
 )
 
 parkinsons_model = pickle.load(
-    open(model_path + r"\parkinsons_model.sav", 'rb')
+    open("parkinsons_model.sav", "rb")
 )
 
 heart_disease_model = pickle.load(
-    open(model_path + r"\heart_disease_model.sav", 'rb')
+    open("heart_disease_model.sav", "rb")
 )
 
 # Sidebar for navigation
