@@ -98,57 +98,88 @@ if selected == 'Diabetes Prediction':
 # Heart Disease prediction page
 
 if selected == 'Heart Disease Prediction':
-    
-    #page title
+
     st.title('Heart Disease Prediction using ML')
-    
+
     col1, col2, col3 = st.columns(3)
-    
+
     with col1:
-        age= st.text_input("Age")
-        
+        age = st.text_input('Age')
+
     with col2:
-        sex = st.text_input('sex')
+        sex = st.text_input('Sex')
+
     with col3:
-        cp = st.text_input('chest pain types')
+        cp = st.text_input('Chest Pain Type')
+
     with col1:
         trestbps = st.text_input('Resting Blood Pressure')
+
     with col2:
-        chol = st.text_input('Serum cholestoral in mg/dL')
-        
+        chol = st.text_input('Serum Cholesterol')
+
     with col3:
-        fbs = st.text_input('Fasting Blood sugar > 120 mg/Dl')
-        
+        fbs = st.text_input('Fasting Blood Sugar')
+
     with col1:
-        restacg = st.text_input('Resting Electrocardiographic results')
-        
+        restacg = st.text_input('Resting ECG Results')
+
     with col2:
-        thelach = st.text_input('Maximum Heart Rate achieved')
-        
+        thelach = st.text_input('Maximum Heart Rate Achieved')
+
     with col3:
         exang = st.text_input('Exercise Induced Angina')
-        
+
     with col1:
-        oldpeak = st.text_input('ST depression Induced Angina ')
-        
+        oldpeak = st.text_input('ST Depression')
+
     with col2:
-        slope = st.text_input('Slope of the peak exercise ST segment')
+        slope = st.text_input('Slope')
+
     with col3:
-        ca =st.text_input('Major vesels colored by flourosopy')
+        ca = st.text_input('Major Vessels (CA)')
+
     with col1:
-        tha1 = st.text_input('thal: 0 = normal; 1 = fixed defect; 2 = reversable defect')
-        
-    #code for prediction
+        tha1 = st.text_input(
+            'Thalassemia (0 = normal, 1 = fixed defect, 2 = reversible defect)'
+        )
+
     heart_diagnosis = ''
-    #creating a button for prediction
-    if st.button('Heart Disease Tet Result'):
-        heart_prediction = heart_disease_model.predict([[age, sex, cp, trestbps, chol, fbs, restacg, thelach, exang, oldpeak, slope, ca, tha1]])
-        
-        if (heart_prediction[0] == 1):
-            heart_diagnosis = 'The person is having heart disease'
+
+    if st.button('Heart Disease Test Result'):
+
+        if all([
+            age, sex, cp, trestbps, chol, fbs,
+            restacg, thelach, exang, oldpeak,
+            slope, ca, tha1
+        ]):
+
+            heart_prediction = heart_disease_model.predict([[
+                float(age),
+                float(sex),
+                float(cp),
+                float(trestbps),
+                float(chol),
+                float(fbs),
+                float(restacg),
+                float(thelach),
+                float(exang),
+                float(oldpeak),
+                float(slope),
+                float(ca),
+                float(tha1)
+            ]])
+
+            if heart_prediction[0] == 1:
+                heart_diagnosis = 'The person is having heart disease'
+            else:
+                heart_diagnosis = 'The person does not have heart disease'
+
         else:
-            heart_diagnosis = 'The person does not have any heart disease'
-    st.success(heart_diagnosis)         
+            heart_diagnosis = 'Please enter all the required values.'
+
+    if heart_diagnosis:
+        st.success(heart_diagnosis)
 
 # Parkinsons prediction page
 
