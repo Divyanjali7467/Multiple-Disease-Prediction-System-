@@ -30,7 +30,8 @@ Trained ML Model
     ↓
 Prediction
     ↓
-Disease / No Disease## 🔐 Machine Learning Models
+Disease / No Disease
+## 🔐 Machine Learning Models
 
 The application uses trained `.sav` models for:
 
