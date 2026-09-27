@@ -33,7 +33,12 @@ The project integrates **Python, Scikit-learn, NumPy, Pandas and Streamlit** int
 > ⚠️ **Disclaimer:** This project is intended for educational and demonstration purposes only. Predictions should not be considered professional medical diagnosis or medical advice.
 
 ---
+---
 
+## 🚀 Live Demo
+
+[Multiple Disease Prediction System](https://divyanjali7467-multiple-disease-pred-multiplediseasepred-tqkc0r.streamlit.app/)
+---
 # ✨ Key Features
 
 | Feature | Description |
